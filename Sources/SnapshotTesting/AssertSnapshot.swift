@@ -6,10 +6,10 @@ import XCTest
 /// ```swift
 /// diffTool = "ksdiff"
 /// ```
-public var diffTool: String? = nil
+nonisolated(unsafe) public var diffTool: String? = nil
 
 /// Whether or not to record all new references.
-public var isRecording = false
+nonisolated(unsafe) public var isRecording = false
 
 /// Whether or not to record all new references.
 ///

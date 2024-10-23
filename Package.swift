@@ -15,32 +15,10 @@ let package = Package(
       name: "SnapshotTesting",
       targets: ["SnapshotTesting"]
     ),
-    .library(
-      name: "InlineSnapshotTesting",
-      targets: ["InlineSnapshotTesting"]
-    ),
-  ],
-  dependencies: [
-    .package(url: "https://github.com/apple/swift-syntax.git", "508.0.1"..<"510.0.0")
   ],
   targets: [
     .target(
       name: "SnapshotTesting"
-    ),
-    .target(
-      name: "InlineSnapshotTesting",
-      dependencies: [
-        "SnapshotTesting",
-        .product(name: "SwiftParser", package: "swift-syntax"),
-        .product(name: "SwiftSyntax", package: "swift-syntax"),
-        .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
-      ]
-    ),
-    .testTarget(
-      name: "InlineSnapshotTestingTests",
-      dependencies: [
-        "InlineSnapshotTesting"
-      ]
     ),
     .testTarget(
       name: "SnapshotTestingTests",
